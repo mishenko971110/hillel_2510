@@ -25,7 +25,6 @@ rolling in wealth."""
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
 adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace('\n', ' ')
-
 print('\nTask #1')
 print(adwentures_of_tom_sawer)
 
@@ -34,7 +33,6 @@ print(adwentures_of_tom_sawer)
 """ Замініть .... на пробіл
 """
 adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace('....', ' ')
-
 print('\nTask #2')
 print(adwentures_of_tom_sawer)
 
@@ -44,7 +42,6 @@ print(adwentures_of_tom_sawer)
 """
 adwentures_of_tom_sawer_list = adwentures_of_tom_sawer.split()
 adwentures_of_tom_sawer = ' '.join(adwentures_of_tom_sawer_list)
-
 print('\nTask #3')
 print(adwentures_of_tom_sawer)
 
@@ -92,7 +89,6 @@ print('Method #3\nКіл-ть слів з великої літери: ', up_cou
 index = adwentures_of_tom_sawer.find('Tom')
 if index != -1:
     index = adwentures_of_tom_sawer[index + 1:].find('Tom')
-
 print('\nTask #6')
 print(f'Позиція, на якій слово Tom зустрічається вдруге: {index}')
 
@@ -102,7 +98,6 @@ print(f'Позиція, на якій слово Tom зустрічається 
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
 adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split('. ')
-
 print('\nTask #7')
 print(adwentures_of_tom_sawer_sentences)
 
@@ -112,7 +107,6 @@ print(adwentures_of_tom_sawer_sentences)
 Перетворіть рядок у нижній регістр.
 """
 adwentures_of_tom_sawer_sentences_4 = adwentures_of_tom_sawer_sentences[3].lower()
-
 print('\nTask #8')
 print(adwentures_of_tom_sawer_sentences_4)
 
@@ -144,6 +138,5 @@ index = len(adwentures_of_tom_sawer_sentences)
 last_sentance = adwentures_of_tom_sawer_sentences[index - 1]
 words_list = last_sentance.split()
 words_count = len(words_list)
-
 print('\nTask #10')
 print(f'В останньому реченні {words_count} слова.')

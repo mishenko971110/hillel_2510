@@ -27,9 +27,7 @@ print('\nInitial list:\n', people_records)
 new_record = ('Anna', 'Verde', 26, 'QA Engineer', 'Ukraine')
 people_records.insert(0, new_record)
 
-record_temp = people_records[1]
-people_records[1] = people_records[5]
-people_records[5] = record_temp
+people_records[1], people_records[5] = people_records[5], people_records[1]
 
 print('\nModified list:\n', people_records)
 
@@ -44,5 +42,5 @@ for person_info in selected_people:
         print(f'{person_info[0]} is younger than 30 years old.')
         break
 
-if is_over_30 == True:
+if is_over_30:
     print('All people in the list are over 30 years old.')

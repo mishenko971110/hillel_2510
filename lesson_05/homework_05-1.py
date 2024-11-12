@@ -49,7 +49,6 @@ search_criteria = (2017, 1.6, 36000)
 
 year_criteria, engine_volume_criteria, price_criteria = search_criteria
 car_price_data = {}
-counter = 5
 
 for car_name, car_info in car_data.items():
     if (car_info[1] >= year_criteria) and (car_info[2] >= engine_volume_criteria) and (car_info[4] <= price_criteria):

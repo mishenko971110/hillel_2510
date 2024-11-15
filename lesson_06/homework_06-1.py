@@ -5,7 +5,4 @@
 str = input('Input a string for check: ')
 count_uniq = len(set(str.lower()))
 
-if count_uniq > 10:
-    print(True)
-else:
-    print(False)
+print(count_uniq > 10)

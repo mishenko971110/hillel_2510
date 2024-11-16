@@ -8,7 +8,7 @@ def multiplication_table(number):
     multiplier = 1
 
     # Complete the while loop condition.
-    while multiplier <= number:
+    while multiplier <= 10:
         result = number * multiplier
         if  result > 25:
             break
@@ -51,11 +51,7 @@ def reverse_line(line: str):
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
 """
 def get_max_word(sentence_list: list):
-    max_word = sentence_list[0]
-    for word in sentence_list:
-        if len(max_word) < len(word):
-            max_word = word
-    return max_word
+    return max(sentence_list, key=lambda x:len(x))
 
 
 # task 6
@@ -63,9 +59,7 @@ def get_max_word(sentence_list: list):
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
 не є підрядком першого рядка."""
 def find_substring(str1, str2):
-    if str2 in str1:
-        return str1.find(str2)
-    return -1
+    return str1.find(str2)
 
 str1 = "Hello, world!"
 str2 = "world"

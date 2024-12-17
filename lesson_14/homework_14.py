@@ -18,7 +18,7 @@ class Student:
         print(f"Студенту {self.age} років.")
 
 
-student1 = Student("Олівер", "Томсон", 18, 88)
-student1.change_avg_mark(99)
+student1 = Student("Олівер", "Томсон", 18, 81.75)
+student1.change_avg_mark(83.25)
 
 student1.print_student_info()

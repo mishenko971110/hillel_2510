@@ -22,3 +22,15 @@ def check_json(file_name):
         print(data)
     except json.JSONDecodeError as e:
         logging.error(f"Файл {file_name} не є валідним JSON: {e}")
+
+
+from pathlib import Path
+parent_dir = Path('ideas_for_test/work_with_csv')
+
+# Отримання списку всіх файлів
+files = [f for f in parent_dir.iterdir() if f.is_file()]
+
+# Виведення списку всіх файлів
+print("Список всіх файлів:")
+for file in files:
+    print(file)

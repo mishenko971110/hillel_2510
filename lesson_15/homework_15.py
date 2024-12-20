@@ -18,10 +18,13 @@ class Rhombus:
 
     def __setattr__(self, name, value):
         if name == 'side_a':
-            if value < 0:
+            if value <= 0:
                 raise ValueError("Сторона ромба повинна бути більшою за 0")
         elif name == 'angle_a':
-            if value <= 0 or  value >= 180:
+            if value <= 0 or value >= 180:
+                raise ValueError("Кут повинен бути в межах від 0 до 180")
+        elif name == 'angle_b':
+            if value <= 0 or value >= 180:
                 raise ValueError("Кут повинен бути в межах від 0 до 180")
         super().__setattr__(name, value)
             
@@ -32,15 +35,22 @@ class Rhombus:
 
 
 try:
-    rhombus1 = Rhombus(5, 60)
-    rhombus2 = Rhombus(100, 120)
+    #rhombus1 = Rhombus(5, 60)
+    #rhombus2 = Rhombus(100, 120)
     #rhombus3 = Rhombus(12, 180)
     #rhombus4 = Rhombus(-12, 120)
+    rhombus5 = Rhombus(100, 60)
+    print(rhombus5.angle_a)
+    print(rhombus5.angle_b)
+    
+    rhombus5.angle_b = 100500
 
-    rhombus1.display_info()
-    rhombus2.display_info()
+    #rhombus1.display_info()
+    #rhombus2.display_info()
     #rhombus3.display_info()
     #rhombus4.display_info()
+    print(rhombus5.angle_a)
+    print(rhombus5.angle_b)
 
 except ValueError as e:
     print(e)

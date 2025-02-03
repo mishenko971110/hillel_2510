@@ -9,31 +9,48 @@ def get_xml_file_list(parent_dir):
     extension = '.xml'
     file_list = []
     files_with_extension = [f for f in parent_dir.iterdir() if f.suffix == extension]
-    # Виведення списку файлів з певним розширенням
-    print(f"Список файлів з розширенням '{extension}':")
     for file in files_with_extension:
         file_list.append(file)
     return file_list
 
 
-def find_by_group(file_name):
+def get_group_data_dict(file_name):
     tree = ET.parse(file_name)
     root = tree.getroot()
-    # Читання та виведення даних з елементів XML-документу
+    group_data_dict = {}
+    group_id = ''
     for child in root:
-        print(child.tag, child.attrib)
         for subchild in child:
-            print(subchild.tag, subchild.text)
+            if subchild.tag == 'number':
+                group_id = subchild.text
+            if subchild.tag == 'timingExbytes':
+                group_data_dict[group_id] = [subtag.text for subtag in subchild if subtag.tag == 'incoming'][0]
+    return group_data_dict
 
+
+def find_by_group(group_id, group_data_dict):
+    return group_data_dict[group_id]
+
+def check_entered_id(group_id, group_data_dict):
+    if group_id in group_data_dict.keys():
+        return True
+    return 0
 
 
 parent_dir = Path('./lesson_13/ideas_for_test/work_with_xml')
 file_list = get_xml_file_list(parent_dir)
+
+group_id = input('Enter group_id: ')
+
 for file in file_list:
-    print(file)
     if 'groups.xml' in str(file):
+        group_data_dict = get_group_data_dict(file)
         try:
-            find_by_group(file)
+            if check_entered_id(group_id, group_data_dict):
+                incoming_value = find_by_group(group_id, group_data_dict)
+                print(f'Для group_id = {group_id} значення incoming = {incoming_value}')
+            else:
+                print(f"Такого group_id з incoming у файлі не знайдено")
         except ET.ParseError as e:
             print(f"Помилка парсингу XML у файлі {file}")
         except FileNotFoundError:

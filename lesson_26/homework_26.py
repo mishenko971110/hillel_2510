@@ -14,24 +14,30 @@ from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 import time
 
-# Ініціалізація драйвера
-driver = webdriver.Chrome()
+def handle_frame(frame_id, secret_text, url):
+    driver = webdriver.Chrome()
+    driver.get(url)
 
-# Відкриття веб-сторінки
-driver.get("http://localhost:8000/dz.html")
+    driver.switch_to.frame(driver.find_element(By.ID, "frame" + str(frame_id)))
+    time.sleep(1)
 
-# Робота з веб-елементами і виконання дій на сторінці
-frame1_field = driver.find_element(By.ID, "input1")
-frame1_button = driver.find_element(By.ID, "button1")
-frame1_field.send_keys("Frame1_Secret")
-frame1_button.click()
-alert = Alert(driver)
-alert.accept()
+    frame_field = driver.find_element(By.ID, "input" + str(frame_id))
+    frame_field.send_keys(secret_text)
 
-frame2_field = driver.find_element(By.ID, "input2")
+    time.sleep(1)
+    
+    frame_button = driver.find_element(By.ID, "button" + str(frame_id))
+    frame_button.click()
+    
+    time.sleep(1)
+    
+    alert = Alert(driver)
+    alert.accept()
 
-# Зачекати 2 секунди перед завершенням
-time.sleep(3600)
+    print('Done!')
+    driver.quit()
 
-# Закрити браузер
-driver.quit()
+
+url = 'http://localhost:8000/dz.html'
+handle_frame(1, "Frame1_Secret", url)
+handle_frame(2, "Frame2_Secret", url)

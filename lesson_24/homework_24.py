@@ -5,24 +5,10 @@
 Первинна аутентифiкация повинна бути органiзована у виглядi фiкстури **scope=’class’**. 
 Сам тест повинен вмiти робити логування не тiльки в консоль але i в файл **test_search.log**
 '''
-import logging
 import pytest
 import requests
 from requests.auth import HTTPBasicAuth
-
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-
-console_handler = logging.StreamHandler()
-file_handler = logging.FileHandler("test_search.log", mode='a')
-
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-console_handler.setFormatter(formatter)
-file_handler.setFormatter(formatter)
-
-logger.addHandler(console_handler)
-logger.addHandler(file_handler)
+from app_logger import logger
 
 
 @pytest.fixture(scope='class')
@@ -42,7 +28,6 @@ def authenticate():
         logger.error(f"Authentication failed with status code {response.status_code}")
         pytest.fail(f"Authentication failed with status code {response.status_code}")
 
-
 @pytest.mark.parametrize("sort_by, limit", [
     ('price', 5),
     ('year', 10),
@@ -50,7 +35,6 @@ def authenticate():
     ('price', 3),
     ('year', 2)
 ])
-
 
 def test_search_cars(authenticate, sort_by, limit):
     session = authenticate

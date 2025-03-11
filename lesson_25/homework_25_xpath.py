@@ -46,95 +46,65 @@ print("#7 Contact email:", contact_email.get_attribute("href"))
 header_logo = driver.find_element(By.XPATH, "//a[@class='header_logo']")
 if header_logo:
     print("#8 Header logo: found!")
-else:
-    print("#8 Header logo: not found!")
 
 footer_logo = driver.find_element(By.XPATH, "//a[@class='footer_logo']")
 if footer_logo:
     print("#9 Footer logo: found!")
-else:
-    print("#9 Footer logo: not found!")
 
 sign_up_btn = driver.find_element(By.XPATH, "//button[@class='hero-descriptor_btn btn btn-primary']")
 if sign_up_btn:
     print("#10 Sign up btn: found!")
-else:
-    print("#10 Sign up btn: not found!")
-sign_up_btn.click()
+    sign_up_btn.click()
 
 sign_up_form = driver.find_element(By.XPATH, "//div[@class='modal-content']")
 if sign_up_form:
     print("#11 Sign up form: opened!")
-else:
-    print("#11 Sign up form: not opened!")
 
 name_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@name='name']")
 if name_field:
     print("#12 Name input field: found!")
-else:
-    print("#12 Name input field: not found!")
 
 last_name_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@name='lastName']")
 if last_name_field:
     print("#13 Last name input field: found!")
-else:
-    print("#13 Last name input field: not found!")
 
 email_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@name='email']")
 if email_field:
     print("#14 Email input field: found!")
-else:
-    print("#14 Email input field: not found!")
 
 password_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@name='password']")
 if password_field:
     print("#15 Password input field: found!")
-else:
-    print("#15 Password input field: not found!")
 
 repeat_password_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@name='repeatPassword']")
 if repeat_password_field:
     print("#16 Re-enter password input field: found!")
-else:
-    print("#16 Re-enter password input field: not found!")
 
 submit_sign_up_btn = driver.find_element(By.XPATH, "//div[@class='modal-footer']//button")
 if submit_sign_up_btn:
     print("#17 Submit sign up btn: found!")
-else:
-    print("#17 Submit sign up btn: not found!")
 
 close_form_btn = driver.find_element(By.XPATH, "//div[@class='modal-header']//button[@class='close']")
 if close_form_btn:
     print("#18 Close form btn: found!")
-else:
-    print("#18 Close form btn: not found!")
-close_form_btn.click()
+    close_form_btn.click()
 
 login_btn = driver.find_element(By.XPATH, "//button[@class='btn btn-outline-white header_signin']")
 if login_btn:
     print("#19 Login btn: found!")
-else:
-    print("#19 Login btn: not found!")
-login_btn.click()
+    login_btn.click()
 
 login_form = driver.find_element(By.XPATH, "//div[@class='modal-content']//div[@class='modal-header']//h4")
 if login_form:
     print("#20 Login form title: ", login_form.text)
-else:
-    print("#20 Login form title: not opened!")
 
 email_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@id='signinEmail']")
 if email_field:
     print("#21 Email input field: found!")
-else:
-    print("#21 Email input field: not found!")
 
 password_field = driver.find_element(By.XPATH, "//div[@class='form-group']//input[@id='signinPassword']")
 if password_field:
     print("#22 Password input field: found!")
-else:
-    print("#22 Password input field: not found!")
 
 form_btns = driver.find_elements(By.XPATH, "//div[@class='modal-content']//button")
 print("#23 Form btns:")
@@ -152,8 +122,6 @@ print("#24 Inputs in forgot password form:", len(frgt_password_form_inputs))
 close_frgt_password_form_btn = driver.find_element(By.XPATH, "//div[@class='modal-header']//button[@aria-label='Close']")
 if close_frgt_password_form_btn:
     print("#25 Close button in frgt_password_form: found!")
-else:
-    print("#25 Close button in frgt_password_form: not found!")
-close_frgt_password_form_btn.click()
+    close_frgt_password_form_btn.click()
 
 driver.quit()

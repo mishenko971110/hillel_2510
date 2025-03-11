@@ -12,12 +12,12 @@ from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture
 def driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--disable-gpu")
+    
     domen = "qauto2.forstudy.space"
     username = "guest"
     password = "welcome2qauto"
-
-    chrome_options = Options()
-    chrome_options.add_argument("--disable-gpu")
 
     URL = f"https://{username}:{password}@{domen}"
 

@@ -1,0 +1,40 @@
+2025-03-11 03:57:39,249 - INFO - Authenticating user...
+2025-03-11 03:57:39,251 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8080
+2025-03-11 03:57:39,253 - DEBUG - http://127.0.0.1:8080 "POST /auth HTTP/1.1" 200 361
+2025-03-11 03:57:39,253 - INFO - Authentication successful.
+2025-03-11 03:57:39,254 - INFO - Sending GET request to http://127.0.0.1:8080/cars?sort_by=price&limit=5
+2025-03-11 03:57:39,256 - DEBUG - Resetting dropped connection: 127.0.0.1
+2025-03-11 03:57:39,260 - DEBUG - http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=5 HTTP/1.1" 200 476
+2025-03-11 03:57:39,260 - INFO - Response received: [{'brand': 'Chevrolet', 'engine_volume': 1.8, 'price': 28000, 'year': 2018}, {'brand': 'Hyundai', 'engine_volume': 1.6, 'price': 29000, 'year': 2020}, {'brand': 'Honda', 'engine_volume': 1.6, 'price': 30000, 'year': 2016}, {'brand': 'Kia', 'engine_volume': 2.0, 'price': 31000, 'year': 2019}, {'brand': 'Ford', 'engine_volume': 2.2, 'price': 32000, 'year': 2015}]
+2025-03-11 03:57:39,263 - INFO - Authenticating user...
+2025-03-11 03:57:39,264 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8080
+2025-03-11 03:57:39,266 - DEBUG - http://127.0.0.1:8080 "POST /auth HTTP/1.1" 200 361
+2025-03-11 03:57:39,266 - INFO - Authentication successful.
+2025-03-11 03:57:39,267 - INFO - Sending GET request to http://127.0.0.1:8080/cars?sort_by=year&limit=10
+2025-03-11 03:57:39,268 - DEBUG - Resetting dropped connection: 127.0.0.1
+2025-03-11 03:57:39,269 - DEBUG - http://127.0.0.1:8080 "GET /cars?sort_by=year&limit=10 HTTP/1.1" 200 953
+2025-03-11 03:57:39,270 - INFO - Response received: [{'brand': 'Ford', 'engine_volume': 2.2, 'price': 32000, 'year': 2015}, {'brand': 'Honda', 'engine_volume': 1.6, 'price': 30000, 'year': 2016}, {'brand': 'Toyota', 'engine_volume': 2.4, 'price': 35000, 'year': 2017}, {'brand': 'Subaru', 'engine_volume': 2.5, 'price': 40000, 'year': 2017}, {'brand': 'BMW', 'engine_volume': 2.0, 'price': 50000, 'year': 2018}, {'brand': 'Chevrolet', 'engine_volume': 1.8, 'price': 28000, 'year': 2018}, {'brand': 'Mazda', 'engine_volume': 2.0, 'price': 32000, 'year': 2018}, {'brand': 'Jeep', 'engine_volume': 3.6, 'price': 45000, 'year': 2018}, {'brand': 'Mercedes', 'engine_volume': 2.5, 'price': 55000, 'year': 2019}, {'brand': 'Volkswagen', 'engine_volume': 2.0, 'price': 33000, 'year': 2019}]
+2025-03-11 03:57:39,271 - INFO - Authenticating user...
+2025-03-11 03:57:39,272 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8080
+2025-03-11 03:57:39,274 - DEBUG - http://127.0.0.1:8080 "POST /auth HTTP/1.1" 200 361
+2025-03-11 03:57:39,274 - INFO - Authentication successful.
+2025-03-11 03:57:39,275 - INFO - Sending GET request to http://127.0.0.1:8080/cars?sort_by=engine_volume&limit=7
+2025-03-11 03:57:39,275 - DEBUG - Resetting dropped connection: 127.0.0.1
+2025-03-11 03:57:39,277 - DEBUG - http://127.0.0.1:8080 "GET /cars?sort_by=engine_volume&limit=7 HTTP/1.1" 200 665
+2025-03-11 03:57:39,278 - INFO - Response received: [{'brand': 'Tesla', 'engine_volume': 0.0, 'price': 80000, 'year': 2020}, {'brand': 'Nissan', 'engine_volume': 1.5, 'price': 40000, 'year': 2021}, {'brand': 'Honda', 'engine_volume': 1.6, 'price': 30000, 'year': 2016}, {'brand': 'Hyundai', 'engine_volume': 1.6, 'price': 29000, 'year': 2020}, {'brand': 'Audi', 'engine_volume': 1.8, 'price': 45000, 'year': 2020}, {'brand': 'Chevrolet', 'engine_volume': 1.8, 'price': 28000, 'year': 2018}, {'brand': 'BMW', 'engine_volume': 2.0, 'price': 50000, 'year': 2018}]
+2025-03-11 03:57:39,280 - INFO - Authenticating user...
+2025-03-11 03:57:39,281 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8080
+2025-03-11 03:57:39,283 - DEBUG - http://127.0.0.1:8080 "POST /auth HTTP/1.1" 200 361
+2025-03-11 03:57:39,283 - INFO - Authentication successful.
+2025-03-11 03:57:39,284 - INFO - Sending GET request to http://127.0.0.1:8080/cars?sort_by=price&limit=3
+2025-03-11 03:57:39,285 - DEBUG - Resetting dropped connection: 127.0.0.1
+2025-03-11 03:57:39,288 - DEBUG - http://127.0.0.1:8080 "GET /cars?sort_by=price&limit=3 HTTP/1.1" 200 291
+2025-03-11 03:57:39,288 - INFO - Response received: [{'brand': 'Chevrolet', 'engine_volume': 1.8, 'price': 28000, 'year': 2018}, {'brand': 'Hyundai', 'engine_volume': 1.6, 'price': 29000, 'year': 2020}, {'brand': 'Honda', 'engine_volume': 1.6, 'price': 30000, 'year': 2016}]
+2025-03-11 03:57:39,289 - INFO - Authenticating user...
+2025-03-11 03:57:39,290 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8080
+2025-03-11 03:57:39,292 - DEBUG - http://127.0.0.1:8080 "POST /auth HTTP/1.1" 200 361
+2025-03-11 03:57:39,292 - INFO - Authentication successful.
+2025-03-11 03:57:39,293 - INFO - Sending GET request to http://127.0.0.1:8080/cars?sort_by=year&limit=2
+2025-03-11 03:57:39,293 - DEBUG - Resetting dropped connection: 127.0.0.1
+2025-03-11 03:57:39,295 - DEBUG - http://127.0.0.1:8080 "GET /cars?sort_by=year&limit=2 HTTP/1.1" 200 190
+2025-03-11 03:57:39,296 - INFO - Response received: [{'brand': 'Ford', 'engine_volume': 2.2, 'price': 32000, 'year': 2015}, {'brand': 'Honda', 'engine_volume': 1.6, 'price': 30000, 'year': 2016}]

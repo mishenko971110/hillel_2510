@@ -1,0 +1,10 @@
+post_URL = 'https://tracking.novaposhta.ua/#/uk'
+post_id_fail = '233333332324'
+post_id_success_received = '20451108011429'
+post_id_success_in_post = '20451118311429'
+post_id_success_not_send = '20451118211429'
+
+msg_fail = 'Ми не знайшли посилку за таким номером.'
+msg_success_received = 'Отримана'
+msg_success_in_post = 'Прибула до відділення'
+msg_success_not_send = 'Відправник самостійно створив цю накладну, але ще не надав до відправки'

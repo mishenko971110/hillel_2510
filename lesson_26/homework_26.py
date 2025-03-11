@@ -19,17 +19,12 @@ def handle_frame(frame_id, secret_text, url):
     driver.get(url)
 
     driver.switch_to.frame(driver.find_element(By.ID, "frame" + str(frame_id)))
-    time.sleep(1)
 
     frame_field = driver.find_element(By.ID, "input" + str(frame_id))
     frame_field.send_keys(secret_text)
-
-    time.sleep(1)
     
     frame_button = driver.find_element(By.ID, "button" + str(frame_id))
     frame_button.click()
-    
-    time.sleep(1)
     
     alert = Alert(driver)
     alert.accept()

@@ -1,5 +1,4 @@
 from auth_locators import AuthXpathLocators, AuthIdLocators
-from homework_28 import driver
 
 class AuthPage:
     def __init__(self, driver):

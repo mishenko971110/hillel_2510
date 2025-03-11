@@ -5,36 +5,31 @@
 '''
 from selenium import webdriver
 from track_locators import TrackingCssLocators, TrackingXpathLocators
-import time
 
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from homework_27 import TrackingCssLocators, TrackingXpathLocators
 
 def check_post_status(post_URL, post_id):
     driver = webdriver.Chrome()
     driver.get(post_URL)
 
-    time.sleep(1)
+    wait = WebDriverWait(driver, 3)
 
-    track_post_field = driver.find_element(*TrackingCssLocators.track_post_field)
+    track_post_field = wait.until(EC.presence_of_element_located(TrackingCssLocators.track_post_field))
     track_post_field.send_keys(post_id)
 
-    search_button = driver.find_element(*TrackingCssLocators.search_button)
+    search_button = wait.until(EC.element_to_be_clickable(TrackingCssLocators.search_button))
     search_button.click()
 
-    time.sleep(3)
-
     try:
-        error_check = driver.find_element(*TrackingXpathLocators.error_msg)
-        if error_check:
-            print('Посилки з таким номером не знайдено!')
-            driver.quit()
-            return 'Ми не знайшли посилку за таким номером.'
+        error_check = wait.until(EC.presence_of_element_located(TrackingXpathLocators.error_msg))
+        return 'Ми не знайшли посилку за таким номером.'
     except:
-        frame_btn = driver.find_element(*TrackingXpathLocators.frame_btn)
+        frame_btn = wait.until(EC.element_to_be_clickable(TrackingXpathLocators.frame_btn))
         frame_btn.click()
-
-        time.sleep(2)
-
-        status_text = driver.find_element(*TrackingXpathLocators.status_text).text
-        print('Статус посилки: ', status_text)
-        driver.quit()
+        status_text = wait.until(EC.presence_of_element_located(TrackingXpathLocators.status_text)).text
         return status_text
+    finally:
+        driver.quit()

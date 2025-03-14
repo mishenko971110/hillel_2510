@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: hillel
+      POSTGRES_PASSWORD: Qq123456
+      POSTGRES_DB: hillel
+    ports:
+      - "5432:5432"
+
+  app:
+    build: ./app
+    container_name: app_container
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "jdbc:postgresql://localhost:5432/hillel"
+    command: ["pytest", "test_app.py"]

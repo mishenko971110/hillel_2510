@@ -36,24 +36,24 @@ def check_entered_id(group_id, group_data_dict):
         return True
     return 0
 
+if __name__ == "__main__":
+    parent_dir = Path('./lesson_13/ideas_for_test/work_with_xml')
+    file_list = get_xml_file_list(parent_dir)
 
-parent_dir = Path('./lesson_13/ideas_for_test/work_with_xml')
-file_list = get_xml_file_list(parent_dir)
+    group_id = input('Enter group_id: ')
 
-group_id = input('Enter group_id: ')
-
-for file in file_list:
-    if 'groups.xml' in str(file):
-        group_data_dict = get_group_data_dict(file)
-        try:
-            if check_entered_id(group_id, group_data_dict):
-                incoming_value = find_by_group(group_id, group_data_dict)
-                print(f'Для group_id = {group_id} значення incoming = {incoming_value}')
-            else:
-                print(f"Такого group_id з incoming у файлі не знайдено")
-        except ET.ParseError as e:
-            print(f"Помилка парсингу XML у файлі {file}")
-        except FileNotFoundError:
-            print(f"Файл не знайдено: {file}")
-        except Exception as e:
-            print(f"Невідома помилка у файлі {file}")
+    for file in file_list:
+        if 'groups.xml' in str(file):
+            group_data_dict = get_group_data_dict(file)
+            try:
+                if check_entered_id(group_id, group_data_dict):
+                    incoming_value = find_by_group(group_id, group_data_dict)
+                    print(f'Для group_id = {group_id} значення incoming = {incoming_value}')
+                else:
+                    print(f"Такого group_id з incoming у файлі не знайдено")
+            except ET.ParseError as e:
+                print(f"Помилка парсингу XML у файлі {file}")
+            except FileNotFoundError:
+                print(f"Файл не знайдено: {file}")
+            except Exception as e:
+                print(f"Невідома помилка у файлі {file}")

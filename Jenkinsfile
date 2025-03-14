@@ -3,6 +3,8 @@ pipeline {
     
     environment {
         PYTHON = "python3"
+        ALLURE_RESULTS = "allure-results"  // Місце для збереження результатів Allure
+        ALLURE_REPORT = "allure-report"    // Місце для збереження звіту Allure
     }
     
     stages {
@@ -21,13 +23,18 @@ pipeline {
         
         stage('Run Tests') {
             steps {
-                sh './venv/bin/pytest --junitxml=reports/results.xml'
+                // Запуск тестів з Allure та збереження результатів
+                sh './venv/bin/pytest --alluredir=${ALLURE_RESULTS} --junitxml=reports/results.xml'
             }
         }
         
         stage('Publish Test Results') {
             steps {
+                // Публікація результатів тестів у форматі JUnit
                 junit 'reports/results.xml'
+                
+                // Генерація звіту Allure
+                allure includeProperties: false, jdk: '', results: [[path: '${ALLURE_RESULTS}']]
             }
         }
     }

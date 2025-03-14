@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/mishenko971110/hillel_2510'
+            }
+        }
+        stage('Install dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Run tests') {
+            steps {
+                sh 'python -m pytest tests/'
+            }
+        }
+        stage('Publish results') {
+            steps {
+                junit '**/test-reports/*.xml'
+            }
+        }
+    }
+}

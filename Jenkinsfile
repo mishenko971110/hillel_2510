@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        PYTHON = "python"
+        PYTHON = "python3"
     }
     
     stages {
